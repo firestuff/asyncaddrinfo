@@ -83,7 +83,7 @@ void asyncaddrinfo_cleanup() {
 	asyncaddrinfo_threads = NULL;
 }
 
-int asyncaddrinfo_resolve(const char *node, const char *service, struct addrinfo *hints) {
+int asyncaddrinfo_resolve(const char *node, const char *service, const struct addrinfo *hints) {
 	int fds[2];
 	assert(!socketpair(AF_UNIX, SOCK_SEQPACKET | SOCK_CLOEXEC, 0, fds));
 
