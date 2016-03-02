@@ -1,4 +1,5 @@
 #include <assert.h>
+#include <fcntl.h>
 #include <netdb.h>
 #include <pthread.h>
 #include <stdlib.h>
@@ -65,7 +66,7 @@ void asyncaddrinfo_init(size_t threads) {
 	assert(asyncaddrinfo_threads);
 
 	for (size_t i = 0; i < asyncaddrinfo_num_threads; i++) {
-		int subfd = dup(fds[0]);
+		int subfd = fcntl(fds[0], F_DUPFD_CLOEXEC, 0);
 		assert(subfd >= 0);
 		assert(!pthread_create(&asyncaddrinfo_threads[i], NULL, asyncaddrinfo_main, (void *) (intptr_t) subfd));
 	}
