@@ -2,8 +2,9 @@
 #include <netdb.h>
 #include <stdlib.h>
 #include <sys/epoll.h>
-#include <sys/types.h>
 #include <sys/socket.h>
+#include <sys/stat.h>
+#include <sys/types.h>
 #include <unistd.h>
 
 #include "asyncaddrinfo.h"
