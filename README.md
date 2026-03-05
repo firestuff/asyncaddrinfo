@@ -1,3 +1,9 @@
+# MOVED
+
+This repository has moved to [https://g.fc.run/cpp/asyncaddrinfo](https://g.fc.run/cpp/asyncaddrinfo)
+
+---
+
 # asyncaddrinfo
 
 Asynchronous version of [getaddrinfo()](http://man7.org/linux/man-pages/man3/getaddrinfo.3.html).
